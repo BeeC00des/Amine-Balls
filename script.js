@@ -2,7 +2,7 @@ const container = document.querySelector('.container');
 
 container.style.width = '100%';
 container.style.height = '100vh';
-container.style.backgroundColor = 'aquamarine'
+container.style.backgroundColor = '#0D1116'
 // container.style.position=' relative'
 
 
@@ -21,10 +21,8 @@ class Ball{
         this.ball.style.borderRadius  ="50%";
 
         this.size = props.size;
-        this.ball.addEventListener("click",this.ballClick.bind(this))
-
         this.control= document.querySelector('.controlBtn');
-        this.control.style.width = '80px';
+        this.control.style.width = '70px';
         this.control.style.height = '30px';
         this.control.style.borderRadius= '7px';
         this.control.style.backgroundColor='white';
@@ -32,6 +30,10 @@ class Ball{
         this.control.style.left= "10px"; 
         this.control.style.top= "20px"; 
         this.control.style.padding = "5px";
+        this.control.style.display = "flex";
+        this.control.style.justifyContent= "center";
+        this.control.style.alignItems = "center";
+
 
         this.control.addEventListener('click',()=>{
 
@@ -57,18 +59,6 @@ class Ball{
         this.ball.style.height= newSize +"px"; 
     }
 
-    double(){
-        this.size = this.size * 2;
-
-        this.ball.style.width=  this.size + "px"; 
-        this.ball.style.height=  this.size +"px"; 
-    }
-
-    ballClick(){
-        this.double()
-        
-    }
-
     
     mover(){
         //bounce effect limit
@@ -78,7 +68,7 @@ class Ball{
 
         }
 
-        if(this.b.left >= window.innerWidth - this.b.w || this.b.left < 0){
+        if(this.b.left >= 1000 - this.b.w || this.b.left < 0){
             this.b.dx *= -1;
         }
        
@@ -106,7 +96,7 @@ class Ball{
 const ballLog = [];
 
 for (let i = 0; i < 10 ; i++){
-    const addBall = new Ball({top:genNum(500), left:genNum(1000), size:genNum(100), backgroundColor: getRandomColor()});
+    const addBall = new Ball({top:genNum(500), left:genNum(1000), size:50, backgroundColor: getRandomColor()});
     addBall.addToContainer();
     ballLog.push(addBall);
 

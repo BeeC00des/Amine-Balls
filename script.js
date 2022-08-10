@@ -3,7 +3,7 @@ const container = document.querySelector('.container');
 container.style.width = '100%';
 container.style.height = '100vh';
 container.style.backgroundColor = 'aquamarine'
-container.style.position=' relative'
+// container.style.position=' relative'
 
 
 // container.style 
@@ -72,18 +72,13 @@ class Ball{
     
     mover(){
         //bounce effect limit
-        
 
-
-        // console.log(this.b.h);
-        // console.log(this.b.top);
-
-        if(this.b.top > 590 - this.b.h || this.b.top < 0){
+        if(this.b.top >= 590 - this.b.h || this.b.top < 0){
             this.b.dy *= -1;
 
         }
 
-        if(this.b.left > 1200 - this.b.w || this.b.left < 0){
+        if(this.b.left >= 1200 - this.b.w || this.b.left < 0){
             this.b.dx *= -1;
         }
        

@@ -38,7 +38,7 @@ class Ball{
             // this.resize(Math.floor(Math.random()* 100));
         
                 if (this.b.move !== true){
-                    this.b.ani =window.requestAnimationFrame(this.mover().bind(this));
+                    this.b.ani = window.requestAnimationFrame(this.mover().bind(this));
                     this.b.move = true; 
                 }else{
                    cancelAnimationFrame(this.b.ani);
@@ -78,7 +78,7 @@ class Ball{
 
         }
 
-        if(this.b.left >= 1200 - this.b.w || this.b.left < 0){
+        if(this.b.left >= window.innerWidth - this.b.w || this.b.left < 0){
             this.b.dx *= -1;
         }
        

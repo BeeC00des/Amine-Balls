@@ -6,6 +6,8 @@ container.style.backgroundColor = 'aquamarine'
 container.style.position=' relative'
 
 
+// container.style 
+
 class Ball{
     constructor(props) { 
         this.ball= document.createElement('div'); 
@@ -70,11 +72,25 @@ class Ball{
     
     mover(){
         //bounce effect limit
-        if(this.b.top > window.innerHeight- this.b.h || this.b.top < 0){
+        // container.style.border ='1px solid red';
+        // container.style.width = '90%';
+        // container.style.height = '90vh';
+
+        const box = document.createElement('div');
+        box.style.width = '500px';
+        box.style.height = '500px';
+        box.style.border ='1px solid green';
+
+
+        console.log(this.b.h);
+
+        if(this.b.top > 590 - this.b.h || this.b.top < 0){
             this.b.dy *= -1;
+            console.log(this.b.h);
+
         }
 
-        if(this.b.left > window.innerWidth - this.b.w || this.b.left < 0){
+        if(this.b.left > 1200 - this.b.w || this.b.left < 0){
             this.b.dx *= -1;
         }
        
@@ -91,7 +107,7 @@ class Ball{
 
         if(this.b.move = true){
                 this.b.ani = window.requestAnimationFrame(this.mover.bind(this));  
-                console.log('Bolarinwa the best world class engineer'); 
+                // console.log('Bolarinwa the best world class engineer'); 
             }else{
             console.log('Bolarinwa the great engineer');
             }
@@ -108,7 +124,7 @@ for (let i = 0; i < 10 ; i++){
 
 }
 
-console.log(ballLog);
+// console.log(ballLog);
 
 
 function genNum(upperLimit){

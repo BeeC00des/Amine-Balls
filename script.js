@@ -72,21 +72,14 @@ class Ball{
     
     mover(){
         //bounce effect limit
-        // container.style.border ='1px solid red';
-        // container.style.width = '90%';
-        // container.style.height = '90vh';
-
-        const box = document.createElement('div');
-        box.style.width = '500px';
-        box.style.height = '500px';
-        box.style.border ='1px solid green';
+        
 
 
-        console.log(this.b.h);
+        // console.log(this.b.h);
+        // console.log(this.b.top);
 
         if(this.b.top > 590 - this.b.h || this.b.top < 0){
             this.b.dy *= -1;
-            console.log(this.b.h);
 
         }
 
